@@ -1,7 +1,23 @@
 {
-  "name": "lit-element-example",
+  "name": "boilerplate-typescript-webpack",
   "version": "1.0.0",
   "main": "index.js",
   "author": "vmfhrmfoaj <vmfhrmfoaj@nate.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "serve": "webpack serve"
+  },
+  "devDependencies": {
+    "webpack": "^5.47.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2",
+
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
