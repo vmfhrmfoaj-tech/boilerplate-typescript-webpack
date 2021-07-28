@@ -9,6 +9,13 @@ console.log(css);
 const button = document.getElementById('button');
 button.addEventListener('click', () => {
     console.log('click');
+    
+    asyncloadLib();
+    
+});
+
+function loadLib(){
+    
     import(/* webpackPrefetch: true, webpackChunkName: "lodash" */ 'lodash').then((mod) => {
         console.log('loaded', mod);
 
@@ -16,4 +23,16 @@ button.addEventListener('click', () => {
 
         alert(_.trim('                   hi                      '));
     });
-});
+}
+
+async function asyncloadLib(){
+    
+    const module = await import(/* webpackPrefetch: true, webpackChunkName: "lodash" */ 'lodash');
+    
+    module.default;
+    console.log('loaded', module);
+
+    const _ = module.default;
+
+    alert(_.trim('                   hi                      '));
+}

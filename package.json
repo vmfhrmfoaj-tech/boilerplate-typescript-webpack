@@ -5,19 +5,24 @@
   "author": "vmfhrmfoaj <vmfhrmfoaj@nate.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && webpack",
+    "watch": "npm run build && webpack --watch",
     "serve": "webpack serve"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
     "webpack": "^5.47.0",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2",
-
-    "css-loader": "^6.2.0",
-    "html-webpack-plugin": "^5.3.2"
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/runtime": "^7.14.8",
     "lodash": "^4.17.21"
   }
 }
