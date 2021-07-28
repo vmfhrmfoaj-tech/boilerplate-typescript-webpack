@@ -9,23 +9,27 @@ console.log(css);
 const button = document.getElementById('button');
 button.addEventListener('click', () => {
     console.log('click');
+
+    let a = [1, 2, 3];
+    let rslt = a.includes(2);
+    console.log(rslt);
     
-    asyncloadLib();
+    asyncloadLib(rslt);
     
 });
 
-function loadLib(){
+function loadLib(rslt){
     
     import(/* webpackPrefetch: true, webpackChunkName: "lodash" */ 'lodash').then((mod) => {
         console.log('loaded', mod);
 
         const _ = mod.default;
 
-        alert(_.trim('                   hi                      '));
+        alert(_.trim('                   hi                      ') + ' : ' + rslt);
     });
 }
 
-async function asyncloadLib(){
+async function asyncloadLib(rslt){
     
     const module = await import(/* webpackPrefetch: true, webpackChunkName: "lodash" */ 'lodash');
     
@@ -34,5 +38,5 @@ async function asyncloadLib(){
 
     const _ = module.default;
 
-    alert(_.trim('                   hi                      '));
+    alert(_.trim('                   hi                      ') + ' : ' + rslt);
 }
