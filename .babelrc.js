@@ -5,9 +5,9 @@ module.exports = function(api){
         [
             '@babel/env',
             {
-              corejs:"3",
+              // corejs:"3",
               modules: false,
-              useBuiltIns: 'usage',
+              // useBuiltIns: 'usage',
               targets: '> 0.25%, not dead',
             },
         ],
@@ -17,6 +17,7 @@ module.exports = function(api){
     ];
 
     const plugins= [
+        ["@babel/plugin-transform-runtime",{"corejs":3}]
     ];
 
     return {
