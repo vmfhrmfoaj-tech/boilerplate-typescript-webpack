@@ -8,7 +8,10 @@ module.exports = {
     //mode: 'production',
 
     entry: {
-        index: "./src/index.js"
+        index: [
+            "es6-promise/auto",  // for IE11 promise
+            "./src/index.js"
+        ]
     },
 
     target: ['web', 'es3'],
