@@ -1,4 +1,6 @@
 // index.js
+import './elements';
+
 import { add, subtract } from './math'
 import { default as myts } from './MyTs'
 
